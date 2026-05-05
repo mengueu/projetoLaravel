@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route; 
+use App\Http\Controllers\funcionarioController; // Importando o Controller 
 
 Route::get('/', function () {
     return view('welcome');
@@ -9,6 +10,8 @@ Route::get('/', function () {
 Route::get('/teste', function (){
     return view('teste');
 });
+
+Route::get('/funcionarios', [funcionarioController::class, 'getFuncionarios']);
 
 /* 
         A função 'view' é uma função do laravel que acessa a pasta 'views'
